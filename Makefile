@@ -1,8 +1,7 @@
 objects = timefunctions.o main.o
 headers = timefunctions.h
-# Set Production to 1 to create a directory on linux systems
-# When testing on windows set to zero, the log will place in the same
-# 	directory as the code
+# Production must be set to 1 for first time running on linux systems
+# Or a segmentation fault will occour
 Production = 0
 
 all: csvCounter clean directory
@@ -25,11 +24,12 @@ timefunctions.o: timefunctions.c timefunctions.h
 
 .PHONY: directory
 directory:
-	ifeq ($(Production),0)
-		@echo "Not Creating Directory"
-	else
-		@echo "Creating Directory"
-		#@mkdir /home/ubuntu/log
+ifeq ($(Production), 0)
+	@echo "Not Creating Directory"
+else
+	@echo "Creating Directory"
+	@mkdir /home/ubuntu/log
+endif
 
 clean:
 	@echo "Removing all object files"

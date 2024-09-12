@@ -11,7 +11,7 @@ int main(){
         filePath = "log.csv";
     #endif
     #ifdef __linux__
-        filePath = "log.csv";
+        filePath = "/home/ubuntu/log/log.csv";
     #endif
 
     record = fopen(filePath, "a");
