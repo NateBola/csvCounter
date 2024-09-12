@@ -12,6 +12,6 @@ void scriptSleep(int msTime){
     #endif
 
     #ifdef __linux__
-        sleep(msTime / 1000)
+        sleep(msTime / 1000);
     #endif
 }
