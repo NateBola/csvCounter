@@ -21,7 +21,6 @@ int main(){
         printf("%s", filePath);
     #endif
 
-    /*
     record = fopen(filePath, "a");
     while (count < 10){
         count += 1;
@@ -31,9 +30,7 @@ int main(){
             printf("Update Entry\n");
         #endif
     }
-    */
     return 0;
-    
 }
 
 
