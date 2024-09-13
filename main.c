@@ -11,7 +11,7 @@ int main(){
         filePath = "log.csv";
     #endif
     #ifdef __linux__
-        filePath = "/snap/csvcounter/current/log.csv";
+        filePath = "/var/snap/csvcounter/common/log.csv";
     #endif
 
     record = fopen(filePath, "a");
