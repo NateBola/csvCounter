@@ -4,7 +4,7 @@ headers = timefunctions.h
 # Or a segmentation fault will occour
 Production = 0
 
-all: csvCounter clean directory
+all: csvCounter
 
 .PHONY: install
 install:
@@ -21,17 +21,4 @@ main.o: main.c
 timefunctions.o: timefunctions.c timefunctions.h
 	@echo "Creating the timefunctions object file"
 	@gcc -c timefunctions.c -I.
-
-.PHONY: directory
-directory:
-ifeq ($(Production), 0)
-	@echo "Not Creating Directory"
-else
-	@echo "Creating Directory"
-	@mkdir /home/ubuntu/log
-endif
-
-clean:
-	@echo "Removing all object files"
-	@rm *.o
 
