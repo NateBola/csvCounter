@@ -13,7 +13,7 @@ int main(){
         filePath = "log.csv";
     #endif
     #ifdef __linux__
-        printf("I am running this section");
+        printf("I am running this section")
         /*
         char *fileRoot = getenv("SNAP_USER_DATA");
 
