@@ -14,12 +14,6 @@ int main(){
     #endif
     #ifdef __linux__
         char *fileRoot = getenv("SNAP_USER_DATA");
-
-        if (fileRoot == NULL) {
-            printf("Cannot find the envrioment variable\n");
-            return 1;
-  }
-
         printf("%s", fileRoot);
         strcat(filePath, fileRoot);
         printf("%s", filePath);
