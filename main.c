@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include <stdint.h>
-#include <timefunctions.h>
+#include <stdint.h>         
+#include <stdlib.h>         /*To get enviroment variables on ubuntu*/
+#include <timefunctions.h>  /*Package created to get universal sleep function on windows and linux*/
 
 int main(){
     uint64_t count = 0;
@@ -11,7 +12,7 @@ int main(){
         filePath = "log.csv";
     #endif
     #ifdef __linux__
-        filePath = "/home/ubuntu/log/log.csv";
+        filePath = getenv("SNAP_USER_DATA");
     #endif
 
     record = fopen(filePath, "a");
