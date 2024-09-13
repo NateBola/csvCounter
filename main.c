@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include <stdint.h>         
+#include <stdint.h>
+#include <string.h>         
 #include <stdlib.h>         /*To get enviroment variables on ubuntu*/
 #include <timefunctions.h>  /*Package created to get universal sleep function on windows and linux*/
 
@@ -12,7 +13,12 @@ int main(){
         filePath = "log.csv";
     #endif
     #ifdef __linux__
-        filePath = getenv("SNAP_USER_DATA");
+        char *fileRoot = getenv("SNAP_USER_DATA");
+        printf("%s", fileRoot);
+        strcat(filePath, fileRoot);
+        printf("%s", filePath);
+        strcat(filePath, "/log.csv");
+        printf("%s", filePath);
     #endif
 
     record = fopen(filePath, "a");
