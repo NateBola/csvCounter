@@ -1,4 +1,4 @@
-objects = timefunctions.o main.o
+objects = main.o
 headers = timefunctions.h
 # Production must be set to 1 for first time running on linux systems
 # Or a segmentation fault will occour
@@ -14,7 +14,7 @@ csvCounter: $(objects)
 	@echo "Creating main executable"
 	@gcc -o csvCounter.exe $(objects)
 
-main.o: main.c $(headers)
+main.o: main.c
 	@echo "Creating the csvCount object file"
 	@gcc -c main.c -I.
 
