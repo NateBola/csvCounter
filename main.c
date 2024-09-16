@@ -2,8 +2,9 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
+#include <timefunctions.h>
 
-#undef FILE_PRINT
+#undef FILE_PRINT 0
 
 int main(){
     uint64_t count = 0;
