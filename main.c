@@ -2,12 +2,12 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
+#include <timefunctions.h>
 
 #undef FILE_PRINT
 
 int main(){
     uint64_t count = 0;
-    FILE *record;
     char *filePath;
 
     #ifdef _WIN32
